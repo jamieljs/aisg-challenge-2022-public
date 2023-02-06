@@ -1,0 +1,110 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(232, 252, 252);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+}
+
+#content {
+  transition: all 0.3s;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: calc(100% - 280px);
+}
+
+#content.active {
+  width: calc(100% - 100px);
+}
+
+#sidebar {
+  min-width: 280px;
+  max-width: 280px;
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 8px 0px 16px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s;
+}
+
+#sidebar .sidebar-header strong {
+  display: none;
+}
+
+#sidebar ul li.nav-item a {
+  text-align: left;
+  color: rgba(255, 255, 255, 0.8)
+}
+#sidebar ul li.nav-item a:hover, #sidebar ul li.nav-item a:focus {
+  color:rgba(255, 255, 255, 0.5);
+}
+#sidebar ul li.nav-item a.active {
+  color:rgba(255, 255, 255, 1);
+}
+
+#sidebar ul li a svg {
+  margin: 0;
+  margin-right: 4px;
+}
+
+@media (max-width: 768px) {
+  .sidebar-collapse-btn {
+      display: none;
+  }
+
+  #sidebar {
+      min-width: 110px;
+      max-width: 110px;
+      text-align: center;
+  }
+
+  #sidebar .sidebar-header h3 {
+      display: none;
+  }
+  #sidebar .sidebar-header strong {
+      display: block;
+  }
+
+  /* Downsize the navigation links font size */
+  #sidebar ul li.nav-item a {
+      padding: 16px 4px;
+      font-size: 0.8em;
+      text-align: center;
+  }
+
+  #sidebar ul li.nav-item a svg {
+      margin: 4px;
+  }
+
+  /* Changing the arrow position to bottom center position, 
+    translateX(50%) works with right: 50% 
+    to accurately  center the arrow */
+  .dropdown-toggle {
+      white-space: inherit;
+  }
+  .dropdown-toggle::after {
+      position: absolute;
+      top: auto;
+      bottom: 10px;
+      right: 50%;
+      -webkit-transform: translateX(50%);
+      -ms-transform: translateX(50%);
+      transform: translateX(50%);
+  }
+}

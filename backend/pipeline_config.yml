@@ -1,0 +1,10 @@
+nodes:
+- input.visual:
+    source: 0
+# - model.yolo_face
+- model.mtcnn
+- custom_nodes.model.gaze_tracking
+- custom_nodes.model.age_detection
+- draw.bbox:
+    show_labels: True
+- output.screen

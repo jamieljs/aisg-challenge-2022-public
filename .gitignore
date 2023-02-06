@@ -1,0 +1,4 @@
+backend/virtualenv/
+backend/.DS_Store
+backend/init.sh
+client/.DS_Store
